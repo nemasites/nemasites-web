@@ -36,10 +36,8 @@
       <nav class="menu" aria-label="Main navigation">
         <a href="index.html">Home</a>
         <a href="services.html">Services</a>
-        <a href="software.html">Software</a>
-        <a href="process.html">Process</a>
         <a href="projects.html">Projects</a>
-        <a href="plans.html">Plans</a>
+        <a href="plans.html" class="active">Plans</a>
         <a href="contact.html">Contact</a>
       </nav>
 
@@ -54,8 +52,6 @@
   <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
     <a href="index.html">Home</a>
     <a href="services.html">Services</a>
-    <a href="software.html">Software</a>
-    <a href="process.html">Process</a>
     <a href="projects.html">Projects</a>
     <a href="plans.html">Plans</a>
     <a href="contact.html">Contact</a>
@@ -69,7 +65,7 @@
         <div class="hero-copy reveal">
           <div class="pill"><span></span> Plans</div>
           <h1>Pick the right starting point.</h1>
-          <p class="lead">These are simple website sections, not fixed legal prices. They help clients choose what to ask about — each plan also has its own detail page.</p>
+          <p class="lead">These are simple website sections, not fixed legal prices. They help clients choose what to ask about — full details for each plan are on this one page.</p>
           <div class="hero-actions">
             <a class="btn btn-lime" href="contact.html">Start a Project</a><a class="btn btn-glass" href="projects.html">See live demos</a>
           </div>
@@ -82,19 +78,19 @@
         <div class="package-grid">
           <div class="package-card reveal is-selected" data-package="starter" tabindex="0" role="button">
             <span>Starter</span><h3>Website Launch</h3><p>A clean professional website for service businesses that need trust and enquiries.</p><b>Homepage, services, about and contact pages</b>
-            <a class="card-link" href="plan-starter.html">Full plan details</a>
+            <a class="card-link" href="#plan-starter">Full plan details</a>
           </div>
           <div class="package-card reveal" style="--delay:0.06s" data-package="growth" tabindex="0" role="button">
             <span>Growth</span><h3>Growth Presence</h3><p>Website, conversion sections, SEO basics, analytics, and content support direction.</p><b>Everything in Website Launch</b>
-            <a class="card-link" href="plan-growth.html">Full plan details</a>
+            <a class="card-link" href="#plan-growth">Full plan details</a>
           </div>
           <div class="package-card reveal" style="--delay:0.12s" data-package="software" tabindex="0" role="button">
             <span>Software</span><h3>Custom Software Build</h3><p>Client portal, booking system, payment platform, delivery tracking app, or dashboard.</p><b>Requirements mapping for your workflow</b>
-            <a class="card-link" href="plan-software.html">Full plan details</a>
+            <a class="card-link" href="#plan-software">Full plan details</a>
           </div>
           <div class="package-card reveal" style="--delay:0.18s" data-package="engine" tabindex="0" role="button">
             <span>Complete</span><h3>Digital Growth Engine</h3><p>Website, software planning, system design, lead capture, campaigns, and analytics.</p><b>Full website and brand presence</b>
-            <a class="card-link" href="plan-engine.html">Full plan details</a>
+            <a class="card-link" href="#plan-engine">Full plan details</a>
           </div>
         </div>
         <aside class="quote-result reveal" id="packageOutput">
@@ -103,6 +99,58 @@
         </aside>
       </div>
     </section>
+
+    <section class="section" style="padding-top:0">
+      <div class="wrap two-col">
+        <div class="project-detail-card reveal" id="plan-starter">
+          <span class="eyebrow" style="margin-bottom:14px">Starter plan</span>
+          <h3>Website Launch</h3>
+          <p style="color:var(--muted)">Best for businesses that need a simple online presence and a clear way for clients to contact them.</p>
+          <ul>
+            <li>Homepage, services, about and contact pages</li>
+            <li>Mobile-first responsive design</li>
+            <li>Clear calls to action and enquiry form</li>
+            <li>Basic on-page SEO setup</li>
+          </ul>
+        </div>
+        <div class="project-detail-card reveal" id="plan-growth" style="--delay:.06s">
+          <span class="eyebrow" style="margin-bottom:14px">Growth plan</span>
+          <h3>Growth Presence</h3>
+          <p style="color:var(--muted)">Best for businesses ready to turn traffic into enquiries, not just look presentable.</p>
+          <ul>
+            <li>Everything in Website Launch</li>
+            <li>Conversion-focused copy and layout</li>
+            <li>Analytics and basic SEO setup</li>
+            <li>Monthly content support direction</li>
+          </ul>
+        </div>
+      </div>
+      <div class="wrap two-col" style="margin-top:24px">
+        <div class="project-detail-card reveal" id="plan-software">
+          <span class="eyebrow" style="margin-bottom:14px">Software plan</span>
+          <h3>Custom Software Build</h3>
+          <p style="color:var(--muted)">Best for businesses whose workflow needs real software behind the website.</p>
+          <ul>
+            <li>Requirements mapping for your workflow</li>
+            <li>Custom-built portal, booking, payment or tracking system</li>
+            <li>Admin dashboard for day-to-day management</li>
+            <li>Testing across devices before launch</li>
+          </ul>
+        </div>
+        <div class="project-detail-card reveal" id="plan-engine" style="--delay:.06s">
+          <span class="eyebrow" style="margin-bottom:14px">Complete plan</span>
+          <h3>Digital Growth Engine</h3>
+          <p style="color:var(--muted)">Best for businesses that want the full website, software and growth system in one build.</p>
+          <ul>
+            <li>Full website and brand presence</li>
+            <li>Custom software where the business needs it</li>
+            <li>Lead capture, quote and booking flows</li>
+            <li>Campaign and analytics support</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
     <section class="section" style="padding-top:0">
       <div class="wrap">
         <div class="cta-banner reveal">
@@ -128,7 +176,7 @@
         </a>
         <p>Web design, custom software development, social media marketing, and system design for service providers that want more trust, leads, bookings, payments, tracking, and revenue.</p>
       </div>
-      <div><h4>Explore</h4><a href="services.html">Services</a><a href="software.html">Software</a><a href="process.html">Process</a><a href="projects.html">Projects</a><a href="plans.html">Plans</a><a href="contact.html">Contact</a></div>
+      <div><h4>Explore</h4><a href="services.html">Services</a><a href="projects.html">Projects</a><a href="plans.html">Plans</a><a href="contact.html">Contact</a></div>
       <div><h4>Contact</h4><a href="mailto:info@nemasites.com">info@nemasites.com</a><a href="https://nemasites.com" target="_blank" rel="noopener">Official website</a></div>
     </div>
     <div class="wrap footer-bottom"><span>© <span id="year"></span> NemaSites. All rights reserved.</span><span>Built for growth-focused digital services.</span></div>
