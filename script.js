@@ -26,4 +26,22 @@
   var contactForm=document.getElementById("contactForm");if(contactForm){contactForm.addEventListener("submit",function(e){e.preventDefault();var name=document.getElementById("name").value.trim();var contactDetail=document.getElementById("contactDetail").value.trim();var type=document.getElementById("type").value;var message=document.getElementById("message").value.trim();var subject="NemaSites Project Enquiry - "+type;var body="Hi NemaSites,\n\nMy name is "+name+".\n\nContact detail: "+(contactDetail||"Not provided")+"\nProject type: "+type+"\n\nMessage:\n"+message+"\n\nPlease contact me with the next steps.";window.location.href="mailto:info@nemasites.com?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(body);});}
   var quoteToggle=document.getElementById("quoteToggle"),quoteDrawer=document.getElementById("quoteDrawer"),quoteClose=document.getElementById("quoteClose"),drawerEmail=document.getElementById("drawerEmail"),drawerButtons=document.querySelectorAll("[data-drawer]");var drawerData={website:"Website Project Enquiry",software:"Custom Software Development Enquiry",portal:"Client Portal Enquiry",booking:"Booking System Enquiry",payment:"Payment Platform Enquiry",tracking:"Delivery Tracking App Enquiry",social:"Social Media Marketing Enquiry",all:"4-in-1 Digital Growth Package Enquiry"};function closeDrawer(){if(quoteDrawer){quoteDrawer.classList.remove("open");quoteDrawer.setAttribute("aria-hidden","true");}}function openDrawer(){if(quoteDrawer){quoteDrawer.classList.add("open");quoteDrawer.setAttribute("aria-hidden","false");}}
   if(quoteToggle){quoteToggle.addEventListener("click",function(){if(quoteDrawer&&quoteDrawer.classList.contains("open")){closeDrawer();}else{openDrawer();}});}if(quoteClose){quoteClose.addEventListener("click",closeDrawer);}drawerButtons.forEach(function(button){button.addEventListener("click",function(){var type=button.getAttribute("data-drawer");var subject=drawerData[type]||drawerData.website;drawerButtons.forEach(function(btn){btn.classList.remove("active");});button.classList.add("active");if(drawerEmail){var body="Hi NemaSites,\n\nI want to enquire about: "+subject+"\n\nBusiness name:\nIndustry:\nGoal:\nFeatures needed, for example client portal, booking system, payment platform, delivery tracking app, or dashboard:\nTimeline:\n\nPlease send me more information and a quote.";drawerEmail.href="mailto:info@nemasites.com?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(body);}});});
+
+  var projectSlider=document.querySelector(".project-slider");
+  if(projectSlider){
+    var autoTimer=null,resumeTimer=null;
+    function step(){
+      if(!projectSlider)return;
+      var card=projectSlider.querySelector(".project-card");
+      var gap=card?parseFloat(getComputedStyle(projectSlider).columnGap||18):18;
+      var advance=(card?card.getBoundingClientRect().width:280)+gap;
+      var atEnd=projectSlider.scrollLeft+projectSlider.clientWidth>=projectSlider.scrollWidth-4;
+      projectSlider.scrollTo({left:atEnd?0:projectSlider.scrollLeft+advance,behavior:"smooth"});
+    }
+    function startAuto(){stopAuto();autoTimer=setInterval(step,3200);}
+    function stopAuto(){if(autoTimer){clearInterval(autoTimer);autoTimer=null;}}
+    function pauseThenResume(){stopAuto();if(resumeTimer)clearTimeout(resumeTimer);resumeTimer=setTimeout(startAuto,5000);}
+    ["pointerdown","touchstart","wheel"].forEach(function(evt){projectSlider.addEventListener(evt,pauseThenResume,{passive:true});});
+    if(!(window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches)){startAuto();}
+  }
 })();
